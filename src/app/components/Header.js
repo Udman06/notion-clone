@@ -3,58 +3,70 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="bg-white shadow p-4">
-      <div className="mx-auto flex justify-evenly gap-10 text-sm font-light ">
-        <Image
-          src="/notion.png"
-          alt="Notion Logo"
-          width={20}
-          height={20}
-        ></Image>
-        <div className="flex gap-10 justify-evenly items-center">
-          <Link
-            href="/"
-            className="text-gray-700 hover:text-blue-500 flex justify-evenly"
-          >
-            Notion
-          </Link>
-          <Link
-            href="/healthcare"
-            className="text-gray-700 hover:text-blue-500"
-          >
-            Mail
-          </Link>
-          <Link href="/finance" className="text-gray-700 hover:text-blue-500">
-            Calendar
-          </Link>
-          <Link href="/finance" className="text-gray-700 hover:text-blue-500">
-            AI
-          </Link>
-          <Link href="/finance" className="text-gray-700 hover:text-blue-500">
-            Enterprise
-          </Link>
-          <Link href="/finance" className="text-gray-700 hover:text-blue-500">
-            Pricing
-          </Link>
-          <Link href="/finance" className="text-gray-700 hover:text-blue-500">
-            Explore
-          </Link>
-          <Link href="/finance" className="text-gray-700 hover:text-blue-500">
-            Request a Demo
-          </Link>
-        </div>
+    <header className="mx-auto max-w-[1252px]">
+      <nav className="mx-auto flex justify-between text-xs font-medium items-center p-3 sticky top-0">
         <div>
+          <span>
+            <img className="h-7 inline" src="/notion.png" alt="Logo"></img>
+          </span>
+        </div>
+        <ul className="md:flex md:items-center gap-3 ml-30">
+          <li>
+            <Link className="md:hover:bg-gray-200 p-2 rounded-md" href="#">
+              Notion
+            </Link>
+          </li>
+          <li>
+            <Link className="hover:bg-gray-200 p-2 rounded-md" href="#">
+              Mail
+            </Link>
+          </li>
+          <li>
+            <Link className="hover:bg-gray-200 p-2 rounded-md" href="#">
+              Calendar
+            </Link>
+          </li>
+          <li>
+            <Link className="hover:bg-gray-200 p-2 rounded-md" href="#">
+              AI
+            </Link>
+          </li>
+          <li>
+            <Link className="hover:bg-gray-200 p-2 rounded-md" href="#">
+              Enterprise
+            </Link>
+          </li>
+          <li>
+            <Link className="hover:bg-gray-200 p-2 rounded-md" href="#">
+              Pricing
+            </Link>
+          </li>
+          <li>
+            <Link className="hover:bg-gray-200 p-2 rounded-md" href="#">
+              Explore
+            </Link>
+          </li>
+          <li>
+            <Link className="hover:bg-gray-200 p-2 rounded-md" href="#">
+              Request a Demo
+            </Link>
+          </li>
+        </ul>
+        <div className="ml-10 mr-3">
           <Link
             href="/finance"
-            className="text-gray-700 hover:text-blue-500 mr-5"
+            className="text-gray-700 mr-5 hover:bg-gray-200 p-2 rounded-md"
           >
             Log In
           </Link>
-          <a href="#" className="button rounded-md text-white bg-blue-500 p-1">
+          <a
+            href="#"
+            className="button rounded-md text-white text-xs bg-black p-2 hover"
+          >
             Get Notion free
           </a>
         </div>
-      </div>
+      </nav>
     </header>
   );
 }

@@ -4,29 +4,99 @@ import Image from "next/image";
 function Footer() {
   return (
     <div>
-      <footer className="bg-gray-100 text-gray-700 py-12">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between space-y-8 md:space-y-0">
-          <div className="flex flex-col space-y-4 md:w-1/4">
-            <Image src="/notion.png" alt="Logo" width={32} height={32} />
-            <p className="text-sm">
-              Notion helps teams and individuals organize, plan, and collaborate
-              on work.
-            </p>
+      <div className="w-full h-px bg-gray-100 my-4 mt-20" />
+      <footer className="bg-white text-gray-700 py-12">
+        <div className="max-w-[1252px] mx-auto px-6 flex flex-col md:flex-row md:justify-evenly space-y-8 md:space-y-0 mb-20">
+          <div className="flex flex-col">
+            <div className="relative w-10 h-10 mr-35">
+              <Image
+                src="/notion.png"
+                alt="Logo"
+                fill
+                className="object-contain"
+              />
+              <h1 className="text-2xl font-bold text-black mt-1 ml-11">
+                Notion
+              </h1>
+            </div>
+            <div className="flex flex-row space-x-3 mt-5 ml-0 mb-10">
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/twitter.svg"
+                  alt="Twitter"
+                  className="w-5 h-5 hover:opacity-75 transition-opacity"
+                />
+              </a>
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/facebook.avif"
+                  alt="Facebook"
+                  className="w-5 h-5 hover:opacity-75 transition-opacity"
+                />
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/linkedin.webp"
+                  alt="LinkedIn"
+                  className="w-5 h-5 hover:opacity-75 transition-opacity"
+                />
+              </a>
+            </div>
           </div>
-          <div className="flex flex-col sm:flex-row justify-between">
+
+          <div className="grid grid-cols-2 md:grid md:grid-cols-4 md:gap-10 gap-11 md:p-6">
             {[
               {
-                title: "Product",
-                items: ["Features", "Integrations", "Templates", "Pricing"],
+                title: "Company",
+                items: [
+                  "About Us",
+                  "Careers",
+                  "Security",
+                  "Status",
+                  "Terms & Privacy",
+                  "Your privacy rights",
+                ],
               },
-              { title: "Company", items: ["About", "Team", "Careers", "Blog"] },
               {
-                title: "Support",
-                items: ["Help Center", "Contact Us", "Status"],
+                title: "Download",
+                items: [
+                  "ios & Android",
+                  "Mac & Windows",
+                  "Calendar",
+                  "Web Clipper",
+                ],
+              },
+              {
+                title: "Resources",
+                items: [
+                  "Help Center",
+                  "Pricing",
+                  "Blog",
+                  "Community",
+                  "Integration",
+                  "Templates",
+                  "Affiliates",
+                ],
+              },
+              {
+                title: "Notion for",
+                items: ["Enterprice", "Small Bussiness", "Personal"],
               },
             ].map((col) => (
-              <div key={col.title} className="mt-6 sm:mt-0 sm:mx-6">
-                <h4 className="font-semibold mb-2">{col.title}</h4>
+              <div key={col.title} className="mt-6 sm:mt-0 md:mx-6">
+                <h4 className="font-semibold mb-1">{col.title}</h4>
                 <ul className="space-y-1 text-sm">
                   {col.items.map((item) => (
                     <li key={item}>
@@ -42,13 +112,6 @@ function Footer() {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Bottom */}
-        <div className="mt-10 border-t border-gray-200 pt-6">
-          <p className="text-center text-xs text-gray-500">
-            © {new Date().getFullYear()} Your Company — All rights reserved
-          </p>
         </div>
       </footer>
     </div>
